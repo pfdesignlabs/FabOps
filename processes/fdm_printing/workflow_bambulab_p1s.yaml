@@ -1,0 +1,24 @@
+workflow: fdm_bambulab_p1s
+version: 0.1.0
+purpose: "Standard FDM print flow on BambuLab P1S for functional parts."
+machine: bambulab_p1s
+materials: ["PLA", "PETG", "ASA"]
+stages:
+  - name: material_prep
+    type: manual
+    description: "Dry filament if needed; load; clean PEI bed."
+  - name: print
+    type: manual
+    parameters:
+      layer_height_mm: 0.15
+      nozzle_temp_c: 215
+      bed_temp_c: 60
+      ironing: true
+  - name: postprocess
+    type: manual
+    description: "Remove brim, quick deburr, inspect top surface."
+acceptance:
+  checklist:
+    - "First layer adhesion good"
+    - "No warping"
+    - "Top surface meets spec"

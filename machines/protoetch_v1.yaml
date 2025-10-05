@@ -1,0 +1,15 @@
+machine: ProtoEtch v1
+type: pcb etching station
+status: in development
+components:
+  heater: "12V cartridge (planned)"
+  pump: "12V aquarium pump"
+  stirrer: "magnetic (fan-based)"
+sensors:
+  temperature: "DS18B20 (planned)"
+etchant: "Sodium persulfate (1:4–1:5)"
+target_temp_c: "40–45"
+target_time_min: "8–12"
+notes:
+  - Keep below 50 °C to avoid mask drift.
+  - Agitation critical for uniform etch.

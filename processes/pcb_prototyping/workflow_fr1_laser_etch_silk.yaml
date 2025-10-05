@@ -1,0 +1,87 @@
+workflow: pcb_prototyping_fr1
+version: 0.1.0
+purpose: "Full PCB prototyping flow using spray-paint mask, fiber-laser ablation, sodium persulfate etch, and UV silkscreen."
+machines:
+  laser: commarker_b6_60w
+  etch: protoetch_v1
+materials:
+  - "FR1 copper-clad (1.5 mm)"
+  - "Matte black spray paint"
+  - "Sodium persulfate (1:4–1:5)"
+  - "Distilled water"
+stages:
+  - name: paint_coat
+    type: manual
+    description: "Degrease FR1. Apply thin matte black coat. Dry ~15 min."
+    validation: "Uniform coating; no pooling or fish eyes."
+    artifacts: ["photo_painted_panel.jpg"]
+
+  - name: laser_drill_marks
+    type: automated
+    machine: laser
+    parameters:
+      power_pct: 100
+      speed_mm_s: 100
+      passes: 2
+    inputs: ["jobs/drill_marks.dxf"]
+    validation: "Clear, centered drill dimples."
+
+  - name: laser_paint_ablation
+    type: automated
+    machine: laser
+    parameters:
+      power_pct: 95
+      speed_mm_s: 200
+      passes: 1
+      hatch_mm: 0.05
+    inputs: ["jobs/panel_traces_centered.dxf"]
+    validation: "Copper exposed cleanly; edges crisp; no soot deposits."
+
+  - name: etching
+    type: automated
+    machine: etch
+    parameters:
+      temp_c: 42
+      duration_min: 10
+      agitation: "magnetic + pump"
+    validation: "Traces isolated; undercut ≤ 0.10 mm; time 8–12 min."
+    artifacts: ["photo_before_etch.jpg", "photo_after_etch.jpg"]
+
+  - name: rinse_and_dry
+    type: manual
+    description: "Rinse with distilled water; dry with compressed air."
+    validation: "No etchant residue; copper brightness consistent."
+
+  - name: silkscreen_uv
+    type: manual
+    description: "Apply UV silkscreen ink via screen; avoid pads; cure per ink datasheet."
+    validation: "Cured uniformly; no smearing."
+
+  - name: laser_clear_pads
+    type: automated
+    machine: laser
+    parameters:
+      power_pct: 60
+      speed_mm_s: 220
+      passes: 1
+    inputs: ["jobs/pads_layer.dxf"]
+    validation: "Pads fully exposed; no overburn."
+
+  - name: final_silkscreen_text
+    type: automated
+    machine: laser
+    parameters:
+      power_pct: 20
+      speed_mm_s: 400
+    inputs: ["jobs/silkscreen_text_top.svg"]
+    validation: "Text ≥ 0.6 mm legible; no ghosting."
+
+acceptance:
+  metrics:
+    - "trace_width_mm: 0.15 ± 0.03"
+    - "undercut_mm: ≤ 0.10"
+    - "total_time_min: ~45"
+  checklist:
+    - "No shorts between nets"
+    - "Drill marks centered"
+    - "Silk legible"

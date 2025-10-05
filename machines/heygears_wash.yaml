@@ -1,0 +1,5 @@
+machine: HeyGears Wash
+type: resin wash unit
+modes: ["agitate", "soak"]
+notes:
+  - Use fresh IPA; avoid over-washing (surface hazing).
