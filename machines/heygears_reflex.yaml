@@ -1,9 +1,0 @@
-machine: HeyGears Reflex
-type: resin 3d printer
-build_volume_mm: [144, 81, 180]
-layer_thickness_range_um: [25, 100]
-resolution_um: 50
-cure_wavelength_nm: 405
-software: ["HeyGears Cloud"]
-notes:
-  - Excellent for fine details; keep wash/cure timing consistent.

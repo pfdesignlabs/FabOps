@@ -1,5 +1,0 @@
-machine: HeyGears Cure
-type: uv cure unit
-wavelength_nm: 405
-notes:
-  - Follow resin profile; avoid over-curing (embrittlement).

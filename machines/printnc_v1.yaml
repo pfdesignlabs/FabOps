@@ -1,8 +1,0 @@
-machine: PrintNC v1
-type: cnc router
-status: planned
-work_area_mm: [800, 800, 100]
-spindle: "TBD"
-controller: "TBD"
-notes:
-  - To be populated after build; include squareness and backlash validation.
