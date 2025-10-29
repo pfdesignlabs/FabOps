@@ -1,0 +1,119 @@
+# ProtoEtch – Controlled Etching Platform  
+
+**Project:** ProtoEtch / FabOps Integration  
+**Developer:** PF Design Labs  
+**Date:** 2025-10-29  
+**Status:** In active development (hardware v1.0 validated, control firmware in progress)  
+**Repository:** [https://github.com/pfdesignlabs/ProtoEtch](https://github.com/pfdesignlabs/ProtoEtch)
+
+---
+
+## 1. Origin and Context  
+
+ProtoEtch was conceived as the practical outcome of FabOps’ PCB-prototyping research.  
+Where the original experiments proved the *mask + etch* method reliable, the bottleneck shifted from pattern creation to **process control**—temperature drift, agitation speed, and etchant aging all affected repeatability.  
+
+To close that gap, a dedicated, network-connected etching station was designed to provide **repeatable, logged, and automated control** of the etching environment.  
+ProtoEtch therefore represents the transition from *research validation* → *process capability* within the FabOps electronics stream.
+
+---
+
+## 2. System Overview  
+
+| Subsystem | Hardware | Function |
+|------------|-----------|----------|
+| **Controller PCB** | Custom ESP32-based board | Drives heater relay, pump MOSFET, reads DS18B20 bath sensor, manages TFT UI |
+| **User interface** | 2.8" SPI TFT + rotary encoder + toggle switch | Start/stop cycle control and parameter adjustment |
+| **Thermal control** | Schego Titanium heater (50–600 W) + relay output | Closed-loop temperature regulation |
+| **Fluid circulation** | 24 V diaphragm pump + MOSFET driver + fly-back diode | Maintains uniform etchant agitation |
+| **Temperature sensing** | DS18B20 stainless probe (Teflon coated) | Real-time bath temperature feedback |
+| **Ambient sensing** | Optional DHT22 | Logs room temp / humidity for process correlation |
+| **Power** | 24 V DC input → LM2596 buck → 3.3 V logic rail | Common supply for heater relay, pump, controller |
+| **Telemetry (FabOps)** | MQTT / InfluxDB / Grafana / Node-RED stack | Feeds live data to the FabOps monitoring layer |
+
+---
+
+## 3. Process Control Logic  
+
+1. **Startup / Idle**  
+   - System powers on, reads ambient and bath temperature.  
+   - Display shows current temp + target + status.  
+
+2. **Etch Cycle**  
+   - User toggles the heater on; ESP32 drives relay until setpoint reached.  
+   - Pump runs concurrently (or timed burst mode 30 s after heater start) to stabilize temperature distribution.  
+   - Safety limits: heater cutoff > 60 °C, pump watchdog 30 s runtime.  
+
+3. **Hold / Finish**  
+   - Once etch temperature ≈ 45 °C ± 0.8 °C is reached, system holds until manual stop.  
+   - After stop, heater off, pump flushes for 30 s and halts.  
+   - All events logged with timestamps.  
+
+---
+
+## 4. Hardware Architecture  
+
+**Board type:** 2-layer, 3.3 V logic, 24 V power domain  
+**Core MCU:** ESP32-WROOM  
+
+| Function | GPIO | Description |
+|-----------|------|-------------|
+| Pump control | 25 | MOSFET gate (IRLZ44N) |
+| Heater relay | 26 | Active-LOW 3.3 V relay input |
+| Temperature (DS18B20) | 21 | 1-Wire + 4.7 k pull-up |
+| Rotary encoder A/B/SW | 32 / 33 / 22 | User input |
+| TFT SPI | 18 / 23 / 19 / 5 / 16 / 17 | SCK / MOSI / MISO / CS / DC / RST |
+| Ambient sensor | 27 | DHT22 data (optional) |
+| EN & IO0 | — | Reset / Boot header + auto-program |
+| 3V3 rail | — | From LM2596 buck |
+
+---
+
+## 5. Integration with FabOps  
+
+ProtoEtch is the first FabOps-certified **“process-tool” node**, publishing live telemetry via MQTT.  
+It exposes:  
+
+| Topic | Data | Frequency |
+|--------|------|-----------|
+| `fabops/protoetch/temp/bath` | °C from DS18B20 | 2 s |
+| `fabops/protoetch/temp/ambient` | °C from DHT22 | 5 s |
+| `fabops/protoetch/humidity` | %RH | 5 s |
+| `fabops/protoetch/heater/state` | on/off | event-driven |
+| `fabops/protoetch/pump/state` | on/off | event-driven |
+
+InfluxDB stores these values for trend analysis; Grafana dashboards visualize temperature profiles and warm-up efficiency.  
+This turns a once-manual chemical process into a **quantified manufacturing operation** consistent with the broader FabOps telemetry framework.
+
+---
+
+## 6. Development Milestones  
+
+| Stage | Focus | Status |
+|--------|--------|--------|
+| Prototype A | Proof-of-concept circuit (breadboard) | ✅ Completed |
+| Prototype B | Custom PCB v1.0 + TFT UI | ✅ Validated |
+| Firmware Alpha | Core control loop + UI + logging | 🧩 In progress |
+| FabOps Integration | MQTT + Influx + Grafana feed | 🧩 Planned |
+| Process Validation | Temperature stability, repeatability | 🔜 Q4 2025 |
+
+---
+
+## 7. Outlook  
+
+ProtoEtch moves FabOps from “capability experiments” into **closed-loop digital process control**.  
+The system bridges mechanical, chemical, and digital fabrication domains—laser, heater, and data stack—into one autonomous node.  
+
+Next steps:
+- Finalize firmware (PID heater control + MQTT telemetry).  
+- Integrate ambient-sensor data into analytics.  
+- Produce enclosure v2 with transparent reservoir, quick-disconnect pump fittings, and removable PCB carrier.  
+
+When complete, ProtoEtch will serve as the **reference architecture** for all FabOps wet-process stations (soldermask curing, electroplating, chemical polishing, etc.).
+
+---
+
+**Document Control**  
+- Author: PF Design Labs / FabOps  
+- Version: 1.0  
+- Last updated: 2025-10-29  
