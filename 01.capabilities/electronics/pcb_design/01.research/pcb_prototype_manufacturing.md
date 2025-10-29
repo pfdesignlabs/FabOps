@@ -1,8 +1,8 @@
-# PCB Patterning Research: Laser Ablation vs. Wet Etching
+# PCB Prototyping Research:
 
 **Project:** NESP / PCB Design  
 **Researcher:** PF Design Labs  
-**Date:** 2025-10-28  
+**Date:** 2025-10-29 
 **Status:** Completed – transitioned to process development  
 
 ---
@@ -11,9 +11,9 @@
 
 Evaluate the feasibility of rapid in-house PCB prototyping as part of the FabOps electronics capability.
 The objective is not to achieve production-grade quality, but to establish a reliable method for verifying:
-	•	the correctness of the schematic and net connectivity,
-	•	the basic routing and layout integrity, and
-	•	the fit and placement of selected components.
+- the correctness of the schematic and net connectivity,
+- the basic routing and layout integrity, and
+- the fit and placement of selected components.
 
 By enabling same-day fabrication of functional prototype boards, this capability would significantly shorten the hardware iteration loop.
 External PCB manufacturing typically requires 8–14 days from order to delivery (including production, shipping, and customs), whereas a controlled in-house process could potentially reduce this to less than one day per iteration.
@@ -26,7 +26,7 @@ External PCB manufacturing typically requires 8–14 days from order to delivery
 | laser system | **xTool F1 Ultra**, 20 W fiber + UV hybrid | Used for ablation and drilling tests |
 | laser system | **ComMarker B6 MOPA 60 W** | Used for ablation and drilling tests |
 | Substrates | FR-1 copper-clad boards | Preferred due to lower thermal mass |
-| 3d printing system | HeyGears Reflex SLA printer (PAWR-10 resin) | Used for drill-guide jigs |
+| 3D printing system | HeyGears Reflex SLA printer (PAWR-10 resin) | Used for drill-guide jigs |
 | Etchant system | **ProtoEtch** (in-development) | Used for controlled sodium persulfate etching |
 | Etchant | Sodium persulfate solution | 40–50 °C bath |
 | Masking | **Motip High Heat Lacquer** (black) | Used as laser-removable resist |
@@ -34,7 +34,7 @@ External PCB manufacturing typically requires 8–14 days from order to delivery
 
 ---
 
-# 3. Methodology
+## 3. Methodology
 
 This section documents the sequence of process experiments performed to establish an in-house PCB prototyping workflow.  
 Three core operations were studied:  
