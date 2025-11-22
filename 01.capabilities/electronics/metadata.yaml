@@ -1,0 +1,19 @@
+id: electronics
+slug: electronics_engineering
+description: "Design and validate electronic subsystems end-to-end."
+owner_role: "Principal Electronics Engineer"
+dependencies:
+  - fabrication
+interfaces:
+  - firmware
+  - validation
+states:
+  - inactive
+  - active
+  - locked
+playbooks:
+  kickoff: playbooks/kickoff.md
+  validation: playbooks/evt_validation.md
+knowledge_base:
+  - knowledge_base/project_foundation.md
+  - knowledge_base/evt_measurement.md

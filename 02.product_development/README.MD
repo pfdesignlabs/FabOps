@@ -30,6 +30,8 @@ product_lifecycle/
 └── 10_Knowledge/          → Retrospective & lessons learned
 ```
 
+Refer to `phase_capabilities.yaml` for the canonical mapping between lifecycle phases and FabOps capabilities; agents use it to decide which playbooks to load.
+
 Each phase folder contains:
 
 - `*_GUIDE.md` – what to do in that phase  

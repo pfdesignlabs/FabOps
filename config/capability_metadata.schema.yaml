@@ -1,0 +1,39 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: FabOps Capability Metadata
+
+type: object
+required:
+  - id
+  - slug
+  - description
+  - owner_role
+  - states
+properties:
+  id:
+    type: string
+  slug:
+    type: string
+  description:
+    type: string
+  owner_role:
+    type: string
+  dependencies:
+    type: array
+    items:
+      type: string
+  interfaces:
+    type: array
+    items:
+      type: string
+  states:
+    type: array
+    items:
+      type: string
+  playbooks:
+    type: object
+    additionalProperties:
+      type: string
+  knowledge_base:
+    type: array
+    items:
+      type: string

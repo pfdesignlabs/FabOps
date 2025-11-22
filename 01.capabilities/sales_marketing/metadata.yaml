@@ -1,0 +1,18 @@
+id: sales_marketing
+slug: sales_marketing_ops
+description: "Aligns offering, messaging, and revenue plans for each launch."
+owner_role: "Commercial Lead"
+dependencies:
+  - digital
+interfaces:
+  - finance
+  - product_lifecycle
+states:
+  - inactive
+  - active
+  - locked
+playbooks:
+  kickoff: playbooks/kickoff.md
+  launch: playbooks/launch_enablement.md
+knowledge_base:
+  - knowledge_base/launch_readiness.md

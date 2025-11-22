@@ -1,0 +1,19 @@
+id: fabrication
+slug: fabrication_ops
+description: "Plans and executes manufacturing from prototype through ramp."
+owner_role: "Fabrication Lead"
+dependencies:
+  - electronics
+interfaces:
+  - validation
+  - finance
+states:
+  - inactive
+  - active
+  - locked
+playbooks:
+  kickoff: playbooks/kickoff.md
+  readiness: playbooks/manufacturing_readiness.md
+knowledge_base:
+  - knowledge_base/project_foundation.md
+  - knowledge_base/manufacturing_readiness.md

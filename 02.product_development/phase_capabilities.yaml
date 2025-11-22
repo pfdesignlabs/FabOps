@@ -1,0 +1,36 @@
+phases:
+  foundation:
+    folders:
+      - 01.discovery
+      - 02.strategic_fit
+      - 03.system_architecture
+    default_capabilities:
+      - digital
+      - electronics
+      - fabrication
+    gate_owner: "Product Lead"
+  validation:
+    folders:
+      - 04.proof_of_concept
+      - 05.engineering_validation_test
+      - 07.design_validation_test
+      - 06.production_validation_test
+    default_capabilities:
+      - electronics
+      - fabrication
+    gate_owner: "Validation Lead"
+  production_preparation:
+    folders:
+      - 08.mass_production
+    default_capabilities:
+      - fabrication
+    gate_owner: "Manufacturing Lead"
+  gtm_launch:
+    folders:
+      - 09.launch
+      - 10.post_launch
+      - 11.knowledge
+    default_capabilities:
+      - digital
+      - sales_marketing
+    gate_owner: "GTM Lead"

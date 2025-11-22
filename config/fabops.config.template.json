@@ -1,0 +1,25 @@
+{
+  "fabops_version": "1.0.0",
+  "project": {
+    "name": "",
+    "vision": "",
+    "target_user": "",
+    "job_to_be_done": "",
+    "value_proposition": "",
+    "constraints": [],
+    "repo_path": "",
+    "local_path": "",
+    "success_criteria": []
+  },
+  "capabilities": {
+    "digital": "inactive",
+    "electronics": "inactive",
+    "fabrication": "inactive",
+    "sales_marketing": "inactive"
+  },
+  "lifecycle": {
+    "current_phase": "foundation",
+    "next_gate": "GATE_DISCOVERY_REVIEW",
+    "last_updated": "2025-01-01"
+  }
+}

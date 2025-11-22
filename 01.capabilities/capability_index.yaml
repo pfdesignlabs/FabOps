@@ -1,0 +1,40 @@
+capabilities:
+  digital:
+    owner: "Digital Systems Lead"
+    maturity_level: 2
+    path: digital
+    playbooks:
+      kickoff: playbooks/kickoff.md
+      launch: playbooks/launch_orchestration.md
+    knowledge_base_refs:
+      - knowledge_base/project_foundation.md
+      - knowledge_base/launch_readiness.md
+  electronics:
+    owner: "Principal Electronics Engineer"
+    maturity_level: 3
+    path: electronics
+    playbooks:
+      kickoff: playbooks/kickoff.md
+      validation: playbooks/evt_validation.md
+    knowledge_base_refs:
+      - knowledge_base/project_foundation.md
+      - knowledge_base/evt_measurement.md
+  fabrication:
+    owner: "Fabrication Lead"
+    maturity_level: 3
+    path: fabrication
+    playbooks:
+      kickoff: playbooks/kickoff.md
+      readiness: playbooks/manufacturing_readiness.md
+    knowledge_base_refs:
+      - knowledge_base/project_foundation.md
+      - knowledge_base/manufacturing_readiness.md
+  sales_marketing:
+    owner: "Commercial Lead"
+    maturity_level: 2
+    path: sales_marketing
+    playbooks:
+      kickoff: playbooks/kickoff.md
+      launch: playbooks/launch_enablement.md
+    knowledge_base_refs:
+      - knowledge_base/launch_readiness.md
