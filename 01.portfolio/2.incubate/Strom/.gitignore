@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# Build artifacts
+/build/
+dist/
+*.log
