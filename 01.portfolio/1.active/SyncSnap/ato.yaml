@@ -1,0 +1,12 @@
+requires-atopile: "^0.12.4"
+
+paths:
+  src: ./
+  layout: ./hardware/pcb
+
+builds:
+  snapsync_v3:
+    entry: designs/snapsync_v3.ato:SnapSyncV3
+    paths:
+      layout: hardware/pcb/SnapSyncV3
+      output_base: build/kicad/SnapSyncV3

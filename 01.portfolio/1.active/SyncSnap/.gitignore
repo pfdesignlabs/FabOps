@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# Build outputs
+build/
+dist/
+*.step
+*.zip
+
+# KiCad
+*.bak
+*.kicad_prl
+*.kicad_pro
+*.kicad_sch-bak
+*-backups/
+
+# VS Code
+.vscode/
+
+# Atopile
+.config/

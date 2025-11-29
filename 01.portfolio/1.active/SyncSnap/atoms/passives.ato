@@ -1,0 +1,53 @@
+import ElectricSignal
+
+component R_1K_THT:
+    signal a
+    signal b
+
+    a ~ pin 1
+    b ~ pin 2
+
+    value = "1k"
+    footprint = "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+
+component R_10K_THT:
+    signal a
+    signal b
+
+    a ~ pin 1
+    b ~ pin 2
+
+    value = "10k"
+    footprint = "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+
+component C_100n_THT:
+    signal a
+    signal b
+
+    a ~ pin 1
+    b ~ pin 2
+
+    value = "100n"
+    footprint = "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+
+component D_1N4148_THT:
+    signal cathode
+    signal anode
+
+    cathode ~ pin 1
+    anode ~ pin 2
+
+    value = "1N4148"
+    footprint = "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+
+component Q_2N3904_TO92:
+    signal collector
+    signal base
+    signal emitter
+
+    emitter ~ pin 1
+    base ~ pin 2
+    collector ~ pin 3
+
+    value = "2N3904"
+    footprint = "Package_TO_SOT_THT:TO-92_Inline"

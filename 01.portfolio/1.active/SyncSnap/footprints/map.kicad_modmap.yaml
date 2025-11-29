@@ -1,0 +1,12 @@
+SJ1_2503A:
+  footprint: "Connector_Audio:Jack_2.5mm_SJ1-2503A"
+Reed_SMD:
+  footprint: "Switch:Reed_SMD_Custom"
+NPN_2N3904:
+  footprint: "Package_TO_SOT_THT:TO-92_Inline"
+R:
+  footprint: "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm"
+C:
+  footprint: "Capacitor_THT:C_Disc_D5.0mm_P5.00mm"
+D_1N4148:
+  footprint: "Diode_THT:D_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm"

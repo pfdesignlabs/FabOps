@@ -1,0 +1,11 @@
+import ElectricSignal
+
+
+component Reed_SMD:
+    a = new ElectricSignal
+    b = new ElectricSignal
+
+    a.line ~ pin 1
+    b.line ~ pin 2
+
+    footprint = "Button_Switch_SMD:SW_SPST_REED_CT10-XXXX-G2"
