@@ -22,17 +22,16 @@ FabOps is our open‑framework for documenting, validating and eventually automa
 ## Repository Structure  
 ```
 /docs/                     → Manifest, governance + changelog  
-/01.capabilities/          → Capability modules + metadata  
-/02.product_development/   → Lifecycle phases, templates, phase_capabilities.yaml  
-/03.sales_marketing/       → GTM workspace (mirrors capability playbooks)  
-/04.finance/               → Financial models referenced by capabilities  
-/knowledge_base/           → Evergreen references linked from playbooks  
-/config/                   → Schemas + bootstrap templates  
+/01.capabilities/          → Capability families (CAD design, hardware, electronics, software)  
+/02.knowledge_base/        → Lifecycle knowledge hub + phase guides (`phase_capabilities.yaml`)  
+/03.project_init/          → Bootstrap script + project templates  
+/config/                   → Schemas + automation assets  
+/knowledge_base/           → Measurement / readiness references linked from playbooks  
 README.md                  → Entry point  
 LICENSE
 ```
 
-> All folders, files and templates follow naming and structure conventions defined in the Operational Spec now stored in `docs/`.
+> All folders, files and templates follow naming and structure conventions defined in the Operational Spec stored in `docs/`.
 
 ## Getting Started  
 1. Clone the repo:  
@@ -46,9 +45,9 @@ LICENSE
 6. Commit the initial scaffold. Start executing tasks.  
 
 ## For Engineers & Makers  
-- Each capability folder under `01.capabilities/` documents scope + maturity and ships playbooks.
-- Active project disciplines mirror the capability pattern (`README`, `open_actions.md`, `decisions.md`, `assets/`, `data/`).
-- `knowledge_base/` offers canonical measurement guides and readiness examples referenced from playbooks and gate reviews.
+- Each capability family under `01.capabilities/` explains scope, deliverables, maturity path and sub-capabilities.
+- Project workspaces mirror the capability blueprint (`README`, `open_actions.md`, `decisions.md`, `assets/`, `data/`).
+- `02.knowledge_base/` contains the lifecycle guide; `knowledge_base/` stores detailed measurement/readiness references linked from playbooks and gate reviews.
 
 ## For AI Agents  
 - The repository layout and config demonstrate machine‑readable structure (`fabops.config.json`).  

@@ -1,0 +1,36 @@
+phases:
+  foundation:
+    folders:
+      - 01.discovery
+      - 02.strategic_fit
+      - 03.system_architecture
+    default_capabilities:
+      - hardware
+      - software
+      - cad_design
+    gate_owner: "Foundation Lead"
+  validation:
+    folders:
+      - 04.proof_of_concept
+      - 05.engineering_validation_test
+      - 07.design_validation_test
+      - 06.production_validation_test
+    default_capabilities:
+      - hardware
+      - electronics
+      - cad_design
+    gate_owner: "Validation Lead"
+  production_preparation:
+    folders:
+      - 08.mass_production
+    default_capabilities:
+      - hardware
+      - cad_design
+    gate_owner: "Manufacturing Lead"
+  gtm_launch:
+    folders:
+      - 09.launch
+      - 10.post_launch
+    default_capabilities:
+      - software
+    gate_owner: "Launch Lead"

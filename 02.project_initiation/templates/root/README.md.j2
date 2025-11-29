@@ -1,0 +1,133 @@
+# {{ project_name }}
+
+## 1. Overzicht
+Dit project is opgezet volgens **FabOps v1.1**, het operationele raamwerk van PF Design Labs voor end-to-end hardware- en softwareontwikkeling.
+
+Het doel van dit document is om:
+- het project hoog-over te introduceren  
+- de structuur van de repository toe te lichten  
+- duidelijk te maken welke disciplines actief zijn  
+- de belangrijkste documenten en flows vindbaar te maken  
+
+---
+
+## 2. Projectinformatie
+
+**Naam:** {{ project_name }}  
+**Codenaam:** {{ project_codename }}  
+**Type:** {{ project_type }}  
+**Eigenaar:** {{ owner | default("PF Design Labs") }}  
+**FabOps-versie:** {{ fabops_version | default("1.1") }}  
+
+---
+
+## 3. Visie
+
+{{ vision }}
+
+---
+
+## 4. Primary Job-to-Be-Done
+
+{{ job_to_be_done }}
+
+---
+
+## 5. Value Proposition
+
+{{ value_proposition }}
+
+---
+
+## 6. Constraints
+
+{{ constraints }}
+
+---
+
+## 7. Succescriteria
+
+- {{ success_criteria_1 }}
+- {{ success_criteria_2 }}
+{%- if success_criteria_3 %}
+- {{ success_criteria_3 }}
+{%- endif %}
+
+---
+
+## 8. Repository structuur
+
+Dit project gebruikt de FabOps-v1.1 directorystructuur:
+00.tracking/             → epics, stories, tasks, sprints
+00.build_log/            → log van uitgevoerde werkzaamheden
+01.requirements/         → manifest, probleemdefinitie, requirements
+02.product_architecture/ → systeemarchitectuur, interfaces
+03.industrial_design/    → vorm, CAD, ergonomie, DFM
+04.electronics/          → schema’s, PCB’s, prototypes
+05.firmware/             → embedded code
+06.manufacturing/        → mallen, casting, SOP’s
+07.validation/           → POC → EVT → DVT → PVT
+assets/                  → renders, foto’s, artwork
+logs/                    → ruwe data, meetbestanden
+fabops_project.yaml      → initiële projectconfig
+fabops.config.json       → dynamische FabOps-status
+
+---
+
+## 9. Actieve disciplines
+
+De volgende disciplines zijn geactiveerd op basis van `fabops_project.yaml`:
+
+{%- for d, state in disciplines.items() %}
+- **{{ d }}** — {{ state }}
+{%- endfor %}
+
+---
+
+## 10. Documentatie-entrypoints
+
+| Domein               | Pad                                   |
+|----------------------|----------------------------------------|
+| Requirements         | `01.requirements/`                     |
+| Architectuur         | `02.product_architecture/`             |
+| Industrial Design    | `03.industrial_design/`                |
+| Electronics          | `04.electronics/`                      |
+| Firmware             | `05.firmware/`                         |
+| Manufacturing        | `06.manufacturing/`                    |
+| Validation           | `07.validation/`                       |
+| Planning (Epics)     | `00.tracking/01.epics/`                |
+| Stories              | `00.tracking/02.stories/`              |
+| Tasks                | `00.tracking/03.tasks/`                |
+| Sprints              | `00.tracking/sprints/`                 |
+| Build Log            | `00.build_log/`                        |
+
+---
+
+## 11. Werkwijze
+
+Dit project wordt uitgevoerd volgens:
+
+- **Epics → Stories → Tasks** structuur  
+- **RICE-prioritering** voor open actions  
+- **Evidence-gebaseerde** uitvoering (foto’s, logs, assets)  
+- **Gate reviews** per fase (POC/EVT/DVT/PVT)  
+- Continu bijgewerkte `fabops.config.json`  
+
+---
+
+## 12. Statusoverzicht
+
+Zie:  
+**`STATUS.md`** in de projectroot voor een live overzicht van:  
+
+- actieve disciplines  
+- fase-status  
+- openstaande taken  
+- belangrijke beslissingen  
+- risico’s en blockers  
+
+---
+
+## 13. Licentie & Auteurs
+
+{{ license | default("Proprietary © PF Design Labs, 2025") }}

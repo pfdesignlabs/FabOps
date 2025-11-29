@@ -161,7 +161,7 @@ Standaarddisciplines:
 - `electronics`  
 - `firmware`  
 - `software`  
-- `industrial_design`  
+- `cad`  
 - `validation`  
 - `production`  
 - `gtm`  
@@ -173,7 +173,7 @@ Tijdens ontwikkeling kunnen ze alsnog geactiveerd worden als nieuwe inzichten di
 ### 3.3 Cross-Discipline Dependencies
 Voorbeelden:
 - `electronics` → `firmware` → `validation`  
-- `mechanical` → `industrial_design` → `production`  
+- `mechanical` → `cad` → `production`  
 - `software` → `gtm`  
 - `validation` → gate reviews → roadmap updates  
 
@@ -190,7 +190,7 @@ Aan het projectroot:
 /electronics
 /firmware
 /software
-/industrial_design
+/cad
 /validation
 /production
 /gtm
@@ -328,7 +328,7 @@ Het script maakt een initieel bestand zoals:
     "electronics": "inactive",
     "firmware": "inactive",
     "software": "inactive",
-    "industrial_design": "inactive",
+    "cad": "inactive",
     "validation": "inactive",
     "production": "inactive",
     "gtm": "inactive"
@@ -702,7 +702,7 @@ project_root/
   electronics/
   firmware/
   software/
-  industrial_design/
+  cad/
   validation/
     poc/
     evt/

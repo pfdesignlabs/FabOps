@@ -1,0 +1,37 @@
+capabilities:
+  cad_design:
+    name: "CAD Design"
+    owner: "CAD / Industrial Design Lead"
+    maturity_level: 2
+    path: "cad design"
+    sub_capabilities:
+      - 3d_printing_fdm
+      - 3d_printing_resin
+      - vacuum_casting
+    knowledge_base_refs:
+      - "02.knowledge_base/04.proof_of_concept/README.md"
+      - "knowledge_base/manufacturing_readiness.md"
+  electronics:
+    name: "Electronics"
+    owner: "Principal Electronics Engineer"
+    maturity_level: 3
+    path: electronics
+    knowledge_base_refs:
+      - "02.knowledge_base/05.engineering_validation_test/README.md"
+      - "knowledge_base/evt_measurement.md"
+  hardware:
+    name: "Hardware (Mechanical Systems)"
+    owner: "Hardware Program Lead"
+    maturity_level: 2
+    path: hardware
+    knowledge_base_refs:
+      - "02.knowledge_base/03.system_architecture/README.md"
+      - "02.knowledge_base/08.mass_production/README.md"
+  software:
+    name: "Software & Data"
+    owner: "Software Platform Lead"
+    maturity_level: 2
+    path: software
+    knowledge_base_refs:
+      - "02.knowledge_base/01.discovery/README.md"
+      - "02.knowledge_base/09.launch/README.md"

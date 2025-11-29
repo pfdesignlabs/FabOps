@@ -1,0 +1,57 @@
+# Task — {{ epic_name }} — {{ story_id }} — {{ task_title }}
+
+## 1. Doel
+{{ task_goal }}
+
+---
+
+## 2. Beschrijving
+{{ task_description }}
+
+---
+
+## 3. Stappen
+1. {{ step_1 }}
+2. {{ step_2 }}
+{%- if step_3 %}3. {{ step_3 }}{% endif %}
+{%- if step_4 %}4. {{ step_4 }}{% endif %}
+
+---
+
+## 4. Definition of Done
+- Werk volledig uitgevoerd.
+- Documentatie bijgewerkt.
+- Relevante bestanden committed.
+- Bewijslast toegevoegd in `assets/` en/of `logs/`.
+
+---
+
+## 5. Bewijslast
+Typische vormen van evidence:
+- foto’s  
+- prototypes  
+- logs  
+- screenshots  
+- testresultaten  
+
+Upload naar `assets/` of `logs/` en verwijs hier:
+
+**Evidence:**  
+{{ evidence_link | default("—") }}
+
+---
+
+## 6. Uitvoering Log
+Voeg hier notities toe over hoe de task is uitgevoerd:
+
+```
+- {{ timestamp }} — Start execution
+- …
+```
+
+---
+
+## 7. Status
+- **State:** `todo` / `in-progress` / `blocked` / `done`  
+- **Owner:** {{ owner | default("Jochem") }}  
+- **Last updated:** {{ timestamp }}

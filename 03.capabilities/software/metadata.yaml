@@ -1,0 +1,17 @@
+id: software
+owner_role: "Software Platform Lead"
+description: "Backend, data, and UX layers powering FabOps products."
+dependencies:
+  - electronics
+  - hardware
+interfaces:
+  - knowledge_base
+  - gtm
+states:
+  - inactive
+  - active
+  - locked
+knowledge_base_refs:
+  - "02.knowledge_base/01.discovery/README.md"
+  - "02.knowledge_base/09.launch/README.md"
+  - "02.knowledge_base/10.post_launch/README.md"

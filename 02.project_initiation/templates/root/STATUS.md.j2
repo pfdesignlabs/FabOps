@@ -1,0 +1,76 @@
+# Projectstatus — {{ project_name }}
+
+Dit bestand geeft een samengevat overzicht van de huidige status van het project volgens FabOps v1.1.
+
+Laatst bijgewerkt: **{{ timestamp }}**
+
+---
+
+## 1. Fase-status
+
+| Fase                       | Status      |
+|----------------------------|-------------|
+| Foundation                 | {{ phase_foundation }} |
+| Design & Execution         | {{ phase_design }} |
+| Validation (POC/EVT/DVT)   | {{ phase_validation }} |
+| Production Preparation     | {{ phase_production }} |
+| Launch                     | {{ phase_launch }} |
+| Post-Launch                | {{ phase_postlaunch }} |
+
+---
+
+## 2. Actieve disciplines
+
+| Discipline         | Status      |
+|--------------------|-------------|
+{%- for d, state in disciplines.items() %}
+| {{ d }}            | {{ state }} |
+{%- endfor %}
+
+---
+
+## 3. Openstaande Key Tasks
+
+*(Automatisch gevulde lijst — agent vult aan op basis van tasks in `00.tracking/03.tasks/`)*
+
+{{ key_tasks | default("–") }}
+
+---
+
+## 4. Belangrijke beslissingen
+
+*(Gegenereerd uit discipline-`decisions.md` bestanden)*
+
+{{ major_decisions | default("–") }}
+
+---
+
+## 5. Risico’s & Blockers
+
+{{ risks | default("–") }}
+
+---
+
+## 6. Recente activiteiten
+
+Laatste 5 entries uit `00.build_log/`:
+
+{{ recent_activity | default("–") }}
+
+---
+
+## 7. Evidence links
+
+Dit project vereist evidence per task.  
+Ruwe data wordt opgeslagen onder:
+
+- `assets/`  
+- `logs/`  
+
+{{ evidence_overview | default("–") }}
+
+---
+
+## 8. Notes
+
+{{ notes | default("–") }}

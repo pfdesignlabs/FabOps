@@ -1,0 +1,16 @@
+id: hardware
+owner_role: "Hardware Program Lead"
+description: "Mechanical integration, assemblies, and manufacturing readiness."
+dependencies:
+  - cad_design
+  - electronics
+interfaces:
+  - manufacturing
+  - validation
+states:
+  - inactive
+  - active
+  - locked
+knowledge_base_refs:
+  - "02.knowledge_base/03.system_architecture/README.md"
+  - "02.knowledge_base/08.mass_production/README.md"

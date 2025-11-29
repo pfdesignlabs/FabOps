@@ -1,0 +1,21 @@
+id: cad_design
+owner_role: "CAD / Industrial Design Lead"
+description: "Explores and freezes geometry using additive fabrication routes and downstream casting."
+dependencies:
+  - hardware
+  - electronics
+states:
+  - inactive
+  - active
+  - locked
+interfaces:
+  - manufacturing
+default_artifacts:
+  - README.md
+  - roadmap.md
+  - 3d_printing_fdm/
+  - 3d_printing_resin/
+  - vacuum_casting/
+knowledge_base_refs:
+  - "02.knowledge_base/04.proof_of_concept/README.md"
+  - "knowledge_base/manufacturing_readiness.md"

@@ -1,0 +1,16 @@
+id: electronics
+owner_role: "Principal Electronics Engineer"
+description: "Covers schematic capture, PCB layout, and validation for FabOps programs."
+dependencies:
+  - hardware
+  - cad_design
+interfaces:
+  - firmware
+  - validation
+states:
+  - inactive
+  - active
+  - locked
+knowledge_base_refs:
+  - "02.knowledge_base/05.engineering_validation_test/README.md"
+  - "knowledge_base/evt_measurement.md"

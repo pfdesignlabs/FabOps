@@ -1,0 +1,37 @@
+# {{ story_id }}
+
+## 1. User Story
+As {{ actor }}, I want {{ desire }} so that {{ outcome }}.
+
+---
+
+## 2. Acceptance Criteria
+- {{ criterion_1 }}
+- {{ criterion_2 }}
+{%- if criterion_3 %}- {{ criterion_3 }}{% endif %}
+
+---
+
+## 3. Linked Epic
+- {{ epic_name }}
+
+---
+
+## 4. Tasks
+Alle taken voor deze user story komen in:
+
+```
+00.tracking/03.tasks/{{ discipline }}/{{ story_id }}/
+```
+
+---
+
+## 5. Status
+- **State:** `todo` / `in-progress` / `done`  
+- **Owner:** {{ owner | default("Jochem") }}  
+- **Last updated:** {{ timestamp }}
+
+---
+
+## 6. Notes
+{{ notes | default("—") }}

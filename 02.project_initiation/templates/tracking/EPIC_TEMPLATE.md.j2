@@ -1,0 +1,67 @@
+# EPIC — {{ epic_name }}
+
+## 1. Purpose
+Beschrijf in één alinea waarom deze epic bestaat en welke capability of discipline hiermee ontwikkeld, verbeterd of gevalideerd wordt.
+
+---
+
+## 2. Goals
+- {{ goal_1 }}
+- {{ goal_2 }}
+{%- if goal_3 %}- {{ goal_3 }}{% endif %}
+{%- if goal_4 %}- {{ goal_4 }}{% endif %}
+
+---
+
+## 3. Scope
+Wat valt **wel** binnen deze epic?  
+Denk aan deliverables, functionele onderdelen of capaciteiten die expliciet onderdeel zijn van deze stroom.
+
+---
+
+## 4. Out of Scope
+Wat valt **niet** binnen deze epic?  
+Duidelijke grenzen voorkomen scope creep.
+
+---
+
+## 5. Deliverables
+- User stories in `00.tracking/02.stories/`
+- Tasks in `00.tracking/03.tasks/`
+- Discipline-updates in `open_actions.md` en `decisions.md`
+- Evidence: assets, logs, testresultaten
+
+---
+
+## 6. KPIs
+- {{ kpi_1 }}
+- {{ kpi_2 }}
+{%- if kpi_3 %}- {{ kpi_3 }}{% endif %}
+
+---
+
+## 7. Dependencies
+- {{ dependency_1 | default("–") }}
+{%- if dependency_2 %}- {{ dependency_2 }}{% endif %}
+{%- if dependency_3 %}- {{ dependency_3 }}{% endif %}
+
+---
+
+## 8. Risks
+- {{ risk_1 | default("–") }}
+{%- if risk_2 %}- {{ risk_2 }}{% endif %}
+{%- if risk_3 %}- {{ risk_3 }}{% endif %}
+
+---
+
+## 9. Status
+- **State:** `inactive` / `active` / `locked`  
+- **Owner:** {{ owner | default("Jochem") }}  
+- **Last updated:** {{ timestamp }}  
+
+---
+
+## 10. Links
+- Stories → `../02.stories/`
+- Tasks → `../03.tasks/`
+- Discipline folder → `{{ discipline_path }}`
